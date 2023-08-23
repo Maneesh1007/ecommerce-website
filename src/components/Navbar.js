@@ -1,6 +1,15 @@
-import { Button, Navbar, Modal, ModalBody } from "react-bootstrap";
+import {
+  Button,
+  Navbar,
+  Modal,
+  ModalBody,
+  NavLink,
+  Nav,
+} from "react-bootstrap";
 import { useState, useContext } from "react";
 import CartContext from "./CartContext";
+//import styles from "./Navbar.module.css";
+//import { Link } from "react-router-dom";
 
 const NavbarComponent = () => {
   const [show, setShow] = useState(false);
@@ -15,11 +24,23 @@ const NavbarComponent = () => {
   return (
     <>
       <Navbar bg="dark" expand="sm" variant="dark">
-        <Navbar.Brand href="/">HOME</Navbar.Brand>
-        <Navbar.Brand href="/">STORE</Navbar.Brand>
-        <Navbar.Brand href="/">ABOUT</Navbar.Brand>
         <Navbar.Toggle></Navbar.Toggle>
         <Navbar.Collapse className="justify-content-end">
+          <Nav className="justify-content-center">
+            <Nav.Item>
+              <NavLink exact to="/home" activeClassName="active-link">
+                HOME
+              </NavLink>
+            </Nav.Item>
+            <Nav.Item>
+              <NavLink exact to="/">
+                Store
+              </NavLink>
+            </Nav.Item>
+            <Nav.Item>
+              <NavLink to="/about">About</NavLink>
+            </Nav.Item>
+          </Nav>
           <Button variant="dark" onClick={handleShow}>
             Cart {numberOfCartItems}
           </Button>
