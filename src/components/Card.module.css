@@ -1,0 +1,8 @@
+/* Add this CSS to your stylesheet */
+.image-zoom {
+  transition: transform 0.3s; /* Smooth transition */
+}
+
+.image-zoom:hover {
+  transform: scale(1.05); /* Zoom in by 10% */
+}
