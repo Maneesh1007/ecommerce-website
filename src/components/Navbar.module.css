@@ -3,3 +3,9 @@
   font-weight: bold;
   color: blue;
 }
+
+/* NavbarComponent.css */
+.navbar-center {
+  display: flex;
+  justify-content: center;
+}
