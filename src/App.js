@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import ContactUs from "./components/ContactUs";
 import ProductDetailPage from "./components/ProductDetail";
+import AuthForm from "./LoginPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Store />} />
           <Route path="/contact" element={<ContactUs />}></Route>
           <Route path="/product/:id" element={<ProductDetailPage />}></Route>
+          <Route path="/login" element={<AuthForm></AuthForm>}></Route>
         </Routes>
       </Router>
     </CartProvider>

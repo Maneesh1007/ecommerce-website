@@ -1,11 +1,13 @@
 import { Button, Navbar, Modal, ModalBody, Nav } from "react-bootstrap";
 import { useState, useContext } from "react";
 import CartContext from "./CartContext";
-import "./Navbar.module.css";
+import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
+import AuthContext from "./AuthContext";
 
 const NavbarComponent = () => {
   const [show, setShow] = useState(false);
+  const Authctx = useContext(AuthContext);
 
   const cart = useContext(CartContext);
 
@@ -18,22 +20,34 @@ const NavbarComponent = () => {
     <>
       <Navbar bg="dark" expand="sm" variant="dark">
         <Navbar.Toggle></Navbar.Toggle>
-        <Navbar.Collapse className="justify-content-end">
-          <Nav className="navbar-center">
-            <Nav.Item>
-              <NavLink exact to="/home" activeClassName="active-link">
-                HOME
-              </NavLink>
-            </Nav.Item>
+        <Nav className={styles.navbar}>
+          <Nav.Item>
+            <NavLink exact to="/home" activeClassName={styles.active}>
+              HOME
+            </NavLink>
+          </Nav.Item>
+        </Nav>
+        {Authctx.isLogged && (
+          <Nav className={styles.navbar}>
             <Nav.Item>
               <NavLink exact to="/">
                 Store
               </NavLink>
             </Nav.Item>
-            <Nav.Item>
-              <NavLink to="/contact">ContactUs</NavLink>
-            </Nav.Item>
           </Nav>
+        )}
+        <Nav className={styles.navbar}>
+          <Nav.Item>
+            <NavLink to="/contact">About</NavLink>
+          </Nav.Item>
+        </Nav>
+        <Nav className={styles.navbar}>
+          <Nav.Item>
+            <NavLink to="/login">Login</NavLink>
+          </Nav.Item>
+        </Nav>
+
+        <Navbar.Collapse className="justify-content-end">
           <Button variant="dark" onClick={handleShow}>
             Cart {numberOfCartItems}
           </Button>

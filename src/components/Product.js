@@ -6,8 +6,14 @@ const productsArr = [
     price: 100,
 
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-    images: { image1, image2 },
-    reviews: { review1, review2 },
+    images: [
+      "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
+      "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
+    ],
+    reviews: [
+      "Great product! Loved the colors.",
+      "Excellent quality and vibrant colors.",
+    ],
   },
 
   {

@@ -2,10 +2,19 @@
 .active {
   font-weight: bold;
   color: blue;
+  justify-content: center;
 }
 
 /* NavbarComponent.css */
-.navbar-center {
+.navbar {
   display: flex;
   justify-content: center;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center-align items horizontally */
+}
+
+/* Other CSS styles... */
